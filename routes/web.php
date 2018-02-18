@@ -72,3 +72,6 @@ Route::post('/login/custom',[
      'as'=>'login.custom'
 ]);
 
+Route::get('test',function(){
+    return view('test');
+});
