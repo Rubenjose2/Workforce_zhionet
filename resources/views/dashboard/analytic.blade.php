@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.master')
  @section('content') 
  {{-- Firts Section of Ghaphs --}}
 <div class="panel panel-default">

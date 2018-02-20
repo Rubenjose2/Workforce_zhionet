@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.master')
 @section('content')
 <div class ="col-md-10 col-md-offset-1 white-container-noborder  ">
         <h1>List of Messages</h1>

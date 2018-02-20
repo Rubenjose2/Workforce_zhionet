@@ -1,4 +1,5 @@
-@extends('layouts.main') @section('content')
+@extends('layouts.master') 
+@section('content')
 <div class="row">
     <div class="col-md-8 col-md-offset-2 white-container">
         <form action={{route( 'user-edit')}} method="POST">

@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.master')
 {{--  Adding the star rating stylus  --}}
-<link href="{{ asset('css/star-rating.css') }}" rel="stylesheet">   
+
 
 @section('content')
 
