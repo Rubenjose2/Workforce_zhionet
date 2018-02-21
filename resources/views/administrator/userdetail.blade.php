@@ -80,7 +80,7 @@
                                                 </label>
                                                 <label class="radio-inline">
                                                 <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="deactivated"
-                                                {{$user->status == 'deactivate'? 'checked':''}}
+                                                {{$user->status == 'deactivated'? 'checked':''}}
                                                 > Deactivate
                                                 </label>
                                             </div>

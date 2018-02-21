@@ -59,20 +59,37 @@
                 <form id="form-login" class="p-t-15" role="form" action="{{ route('login.custom') }}" method="POST">
                     {{csrf_field()}}
                     <!-- START Form Control-->
-                    <div class="form-group form-group-default">
+                    <div class="form-group form-group-default{{ $errors->has('email') ? ' has-error' : '' }}">
                         <label>Login</label>
                         <div class="controls">
                             <input type="text" name="email" placeholder="email address" class="form-control" required>
                         </div>
+                        @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                        @endif
                     </div>
+
                     <!-- END Form Control-->
                     <!-- START Form Control-->
-                    <div class="form-group form-group-default">
+                    <div class="form-group form-group-default{{ $errors->has('password') ? ' has-error' : '' }}">
                         <label>Password</label>
                         <div class="controls">
                             <input type="password" class="form-control" name="password" placeholder="Credentials" required>
                         </div>
+                        @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                        @endif
                     </div>
+
+                    @if ($errors->has('status'))
+                    <div class="alert alert-danger">
+                        {{$errors->first('status')}}
+                    </div>
+                    @endif
                     <!-- START Form Control-->
                     <div class="row">
                         <div class="col-md-6 no-padding sm-p-l-10">
@@ -91,9 +108,6 @@
                 <!--END Login Form-->
                 <div class="pull-bottom sm-pull-bottom">
                     <div class="m-b-30 p-r-80 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix">
-                        <div class="col-sm-3 col-md-2 no-padding">
-                            <img alt="" class="m-t-5" data-src="assets/img/demo/pages_icon.png" data-src-retina="assets/img/demo/pages_icon_2x.png" height="60" src="assets/img/demo/pages_icon.png" width="60">
-                        </div>
                         <div class="col-sm-9 no-padding m-t-10">
 
                         </div>
@@ -119,7 +133,7 @@
     <script src="{{asset('js/jquery.scrollbar.min.js')}}"></script>
     <script src="{{asset('js/select2.full.min.js')}}"></script>
     <script src="{{asset('js/classie.js')}}"></script>
-    <script src="{{asset('js/validate.min.js')}}"></script>
+    <script src="{{asset('js/jquery.validate.min.js')}}"></script>
     <!-- END VENDOR JS -->
     <!-- BEGIN CORE TEMPLATE JS -->
     <script src="{{asset('js/pages.js')}}" type="text/javascript"></script>
