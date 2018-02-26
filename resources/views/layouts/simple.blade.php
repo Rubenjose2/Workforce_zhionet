@@ -22,7 +22,7 @@
 </head>
 
 <body class="login-page">
-   
+        @yield('content')
         <script src="{{asset('js/pages.js')}}" type="text/javascript"></script>
 </body>
 

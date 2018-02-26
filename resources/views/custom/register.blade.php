@@ -165,6 +165,12 @@
                                 </span>
                                 @endif
                             </div>
+                            <div class="col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <label>Tech ID</label>
+                                    <input type="text" class="form-control" name="tech_id" value="{{old('tech_id')}}" placeholder="MAFLXXXXXX">
+                                </div>
+                            </div>
 
                         </div>
                 </div>

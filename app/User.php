@@ -25,6 +25,7 @@ class User extends Authenticatable
         'DOB',
         'email',
         'password',
+        'tech_id',
     ];
 
     /**
@@ -59,9 +60,8 @@ class User extends Authenticatable
     public function score(){
         return $this->hasOne('App\Score','tech_user_id','tech_id');
     }
-
+    //Security Check if user is an Admin and Manager (old Version)
     public function isAdminManager(){
-
         if($this->security_level =='admin'&& $this->role==3){
             return true;
         }else{
@@ -69,11 +69,36 @@ class User extends Authenticatable
         }
     }
 
+    //Security Check if user is Admin (old Version)
     public function isAdmin(){
         if($this->security_level =='admin'){
             return true;
         }else{
             return false;
         }
+    }
+
+    //Security check if user have a Role Admin (new)
+
+    public function hasAnyRole($roles){
+        if(is_array($roles)){
+            foreach($roles as $role){
+                if ($this->hasRole($role)){
+                    return true;
+                }
+            }
+        }else{
+            if ($this->hasRole($role)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function hasRole($role){
+        if ($this->roles()->where('description',$role)->first()){
+            return true;
+        }
+        else return false;
     }
 }

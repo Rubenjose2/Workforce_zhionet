@@ -11,9 +11,6 @@
                 </div>
             </div>
         </div>
-        <div class="page-header">
-            <h1>{{$fullname}} <small>Profile</small></h1>
-        </div>
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title">General Information</h3>

@@ -42,7 +42,7 @@
             <!-- START Background Caption-->
             <div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
                 <h2 class="semi-bold text-white">
-                    Pages make it easy to enjoy what matters the most in the life</h2>
+                    Believe you can and you’re halfway there. —Theodore Roosevelt</h2>
                 <p class="small">
                     Picture from :Andrew-Art.
                 </p>
@@ -97,6 +97,9 @@
                                 <input type="checkbox" value="1" id="checkbox1">
                                 <label for="checkbox1">Keep Me Signed in</label>
                             </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center justify-content-end">
+                            <a href="/password/reset" class="text-info small">Forgot my Password</a>
                         </div>
                         <div class="col-md-6 d-flex align-items-center justify-content-end">
                             <a href="#" class="text-info small">Help? Contact Support</a>

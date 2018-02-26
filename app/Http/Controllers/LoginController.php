@@ -29,7 +29,7 @@ class LoginController extends Controller
                 return redirect()->route('home');
         }
         //Manage Unsuccess login
-                if (User::where('email',$request->email)->where('status','deactivated')->first()){
+                if (User::where('email',$request->email)->where('status',!'active')->first()){
             return redirect()->back()
                             ->withErrors(['status'=>['Your account is not active.']]);
         }

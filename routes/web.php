@@ -29,37 +29,50 @@ Route::post('user_edit','userController@update');
 Route::get('post_list','showMessangerForm@postlist')->name('user_post_list');
 
 
+Route::group(['middleware' => ['auth','roles']], function () {
+////////////////////////////////////////////////////////////////
+// ROUTES PROTECTED WITH THE auth and roles (admin) middleware//
 // Adminstrator Routes
 
-Route::get('admin','adminControllerPages@show')->name('admin');
+        Route::get('admin','adminControllerPages@show')->name('admin');
 
 
-//Administrator Messagers Routes
+        //Administrator Messagers Routes
 
-Route::resource('admin/posts', 'adminControllerMessages');
-Route::get('admin/post_form','showMessangerForm@show')->name('postform.show');
-Route::get('admin/postshow','showMessangerForm@showPost');
-Route::get('updatepost','showMessangerForm@userUpdatePost');
-Route::post('admin/post_delete/{id}','adminControllerMessages@destroy');
+        Route::resource('admin/posts', 'adminControllerMessages');
+        Route::get('admin/post_form','showMessangerForm@show')->name('postform.show');
+        Route::get('admin/postshow','showMessangerForm@showPost');
+        Route::get('updatepost','showMessangerForm@userUpdatePost');
+        Route::post('admin/post_delete/{id}','adminControllerMessages@destroy');
 
-//User Admins site managements
+        //User Admins site managements
 
-Route::get('admin/user','userController@userlist')->name('user.list');
-Route::post('admin/avatar/{id}','userController@avatar');
-Route::get('admin/user/view/{id}','userController@userview');
-Route::post('admin/user/view/{id}','userController@userAdminedit')->name('userAdminUpdate');
-Route::post('admin/user/{id}','userController@destroy')->name('user.destroy');
+        Route::get('admin/user','userController@userlist')->name('user.list');
+        Route::post('admin/avatar/{id}','userController@avatar');
+        Route::get('admin/user/view/{id}','userController@userview');
+        Route::post('admin/user/view/{id}','userController@userAdminedit')->name('userAdminUpdate');
+        Route::post('admin/user/{id}','userController@destroy')->name('user.destroy');
+
+        //Excel Import and Export Contollers
+
+        Route::get('admin/excel_form','ExcelController@showForm')->name('excel.import');
+        Route::post('admin/excel_upload','ExcelController@import');
+        Route::get('admin/scorecard','ExcelController@scorecard')->name('show.scorecard');
+
+
+/////////////////////////////////////////////////////////
+});
+
+
 
 
 //TEST//
 Route::get('post/{id}','showMessangerForm@usertest');
-Route::get('test','showTestController@showForm');
+Route::get('test',function(){
+    return view('test');
+});
 
-//Excel Import and Export Contollers
 
-Route::get('admin/excel_form','ExcelController@showForm')->name('excel.import');
-Route::post('admin/excel_upload','ExcelController@import');
-Route::get('admin/scorecard','ExcelController@scorecard')->name('show.scorecard');
 
 //Show Analytics
 
@@ -71,7 +84,3 @@ Route::post('/login/custom',[
     'uses'=>'LoginController@login',
      'as'=>'login.custom'
 ]);
-
-Route::get('test',function(){
-    return view('test');
-});

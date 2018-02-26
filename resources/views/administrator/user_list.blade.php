@@ -11,8 +11,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 <div class="row">
         <div class ="col-md-10 col-md-offset-1 white-container-noborder  ">
-                <h1>List of Messages</h1>
-                <legend>Workforce Messages</legend>
+                <h1>List of Users</h1>
         <table id="table-data" class="table table-striped" cellspacing="0" width="100%">
             <thead class="blue-table-head-color">
                 <tr>
