@@ -33,6 +33,7 @@
 
 <body class="fixed-header menu-pin menu-behind">
     <div class="login-wrapper ">
+        @include('flash-messages') 
         <!-- START Login Background Pic Wrapper-->
         <div class="bg-pic">
             <!-- START Background Pic-->

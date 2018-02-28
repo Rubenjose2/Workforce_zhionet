@@ -26,6 +26,7 @@ class User extends Authenticatable
         'email',
         'password',
         'tech_id',
+        'token',
     ];
 
     /**
@@ -37,16 +38,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    // Database Relationships
     protected $touches = ['post'];
 
     public function posts(){
         return $this->hasMany('App\Post','created_by');
     }
-
-    public function getFullNamefromUser(){
-        return "{$this->fname} {$this->lname}";
-    }
+    //*************************/
     //Relation with roles table
+    //*************************/
 
     public function roles(){
         return $this->hasOne('App\Role','id','role');
@@ -60,6 +61,15 @@ class User extends Authenticatable
     public function score(){
         return $this->hasOne('App\Score','tech_user_id','tech_id');
     }
+
+    public function getFullNamefromUser(){
+        return "{$this->fname} {$this->lname}";
+    }
+
+
+    //END RELATIONSHIPS//
+
+    // Functions and Verifications//
     //Security Check if user is an Admin and Manager (old Version)
     public function isAdminManager(){
         if($this->security_level =='admin'&& $this->role==3){
@@ -68,7 +78,6 @@ class User extends Authenticatable
             return false;
         }
     }
-
     //Security Check if user is Admin (old Version)
     public function isAdmin(){
         if($this->security_level =='admin'){
@@ -77,7 +86,6 @@ class User extends Authenticatable
             return false;
         }
     }
-
     //Security check if user have a Role Admin (new)
 
     public function hasAnyRole($roles){
@@ -88,17 +96,20 @@ class User extends Authenticatable
                 }
             }
         }else{
-            if ($this->hasRole($role)){
+            if ($this->hasRole($roles)){
                 return true;
             }
         }
         return false;
     }
-
     public function hasRole($role){
         if ($this->roles()->where('description',$role)->first()){
             return true;
         }
         else return false;
+    }
+    //Return true if the user verify his email account
+    public function emailVerified(){
+        return $this->token === null;
     }
 }

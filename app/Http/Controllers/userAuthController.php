@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use Auth;
+use App\Notifications\VerifyByEmail;
 class userAuthController extends Controller
 {
     public function showRegisterform(){
@@ -14,11 +15,14 @@ class userAuthController extends Controller
     public function register(Request $request){
         $this->validation($request);
         $request['password'] = bcrypt($request->password);
+        $request['token'] = str_random(25); // This would add a random token to use in the Email Verification
         $user = User::create($request->all());
         //Pull user Id and add messages to the user;
         $this->massaddPost($user->id);
+        // Here we are sending a verification email to the user
+        $user->notify(new VerifyByEmail($user));
         //Redirect to the View
-        return redirect('/')->with('sucess','You are registed');
+        return redirect('/')->with('warning','Please check your email to confirm you account');
     }
     public function validation($request){
         return $this->validate($request,[

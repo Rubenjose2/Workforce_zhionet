@@ -19,8 +19,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('user-register','userAuthController@showRegisterform')->name('custom.register');
-Route::post('user-register','userAuthController@register');
+Route::get('register','userAuthController@showRegisterform')->name('custom.register');
+Route::post('register','userAuthController@register');
 
 // Dashboard Routes
 
@@ -71,7 +71,9 @@ Route::get('post/{id}','showMessangerForm@usertest');
 Route::get('test',function(){
     return view('test');
 });
+// Verification Email Route
 
+Route::get('/verify/{token}','verifyController@verifyemail')->name('verify');
 
 
 //Show Analytics

@@ -19,7 +19,11 @@ class LoginController extends Controller
             'password'=>'required|min:3'
         ]);
 
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status'=>'active'])){
+        if(Auth::attempt([
+            'email' => $request->email, 
+            'password' => $request->password, 
+            'token'=>null,
+            'status'=>'active'])){
         //Success Process
             $user = User::where('email',$request->email)->first();
             
@@ -29,9 +33,9 @@ class LoginController extends Controller
                 return redirect()->route('home');
         }
         //Manage Unsuccess login
-                if (User::where('email',$request->email)->where('status',!'active')->first()){
+            if (User::where('email',$request->email)->where('status',!'active')->first()){
             return redirect()->back()
-                            ->withErrors(['status'=>['Your account is not active.']]);
+                            ->withErrors(['status'=>['Your account is not active or verified']]);
         }
 
         if (!User::where('email',$request->email)->first()){
