@@ -45,3 +45,9 @@ mix.copy('resources/assets/plugins/switchery/css/switchery.min.css', 'public/css
 mix.copy('resources/assets/plugins/select2/js/select2.full.min.js', 'public/js');
 mix.copy('resources/assets/plugins/classie/classie.js', 'public/js');
 mix.copy('resources/assets/plugins/jquery-validation/js/jquery.validate.min.js', 'public/js');
+
+//From Custom Gage
+
+mix.copy('resources/assets/js/justgage.js', 'public/js');
+mix.copy('resources/assets/js/raphael-2.1.4.min.js', 'public/js');
+mix.js('resources/assets/js/gauge.js', 'public/js');

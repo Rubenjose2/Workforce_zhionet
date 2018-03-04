@@ -69,7 +69,7 @@ Route::group(['middleware' => ['auth','roles']], function () {
 //TEST//
 Route::get('post/{id}','showMessangerForm@usertest');
 Route::get('test',function(){
-    return view('test');
+    return view('thanks');
 });
 // Verification Email Route
 

@@ -22,7 +22,7 @@ class userAuthController extends Controller
         // Here we are sending a verification email to the user
         $user->notify(new VerifyByEmail($user));
         //Redirect to the View
-        return redirect('/')->with('warning','Please check your email to confirm you account');
+        return view('thanks')->with('warning','Please check your email to confirm you account');
     }
     public function validation($request){
         return $this->validate($request,[

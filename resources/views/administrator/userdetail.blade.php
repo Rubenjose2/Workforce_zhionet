@@ -35,7 +35,12 @@
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <strong>Full Name:</strong> {{$fullname}}
                         </div>
                         <div class="col-md-5">
-                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <strong>Email Address:</strong> {{$user->email}}
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <strong>Email Address:</strong> {{$user->email}} 
+                            @if($user->emailVerified())
+                                <span class="label label-success">CONFIRMED</span>
+                            @else
+                                <span class="label label-danger">NOT CONFIRMED</span>
+                            @endif
                         </div>
                         <br>
                         <br>
@@ -115,13 +120,6 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="col-md-5">
-                                                <label for="input-id">Confirmed:</label>
-                                            </div>
-                                            <div class="col-md">
-                                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-5">        

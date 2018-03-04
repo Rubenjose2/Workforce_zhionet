@@ -33,7 +33,10 @@
 
     <!-- Chart Js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js"></script>
+
+
 
 
     <link href="{{asset('css/pace-theme-flash.css')}}" rel="stylesheet" type="text/css" />
@@ -206,6 +209,9 @@
     <!-- BEGIN CORE TEMPLATE JS -->
     <script src="{{asset('js/pages.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/style.js')}}"></script>
+
+    {{--  Gages  --}}
+
     {{--  <script src="{{ asset('js/app.js') }}"></script>  --}}
 
 </body>

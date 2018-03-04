@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/bootstrap.js": "/js/bootstrap.js",
     "/js/style.js": "/js/style.js",
+    "/js/gauge.js": "/js/gauge.js",
     "/js/chart.js": "/js/chart.js",
     "/js/bootstrap.min.js": "/js/bootstrap.min.js",
     "/js/bootstrap-formhelpers-phone.js": "/js/bootstrap-formhelpers-phone.js",
@@ -30,5 +31,7 @@
     "/css/switchery.min.css": "/css/switchery.min.css",
     "/js/select2.full.min.js": "/js/select2.full.min.js",
     "/js/classie.js": "/js/classie.js",
-    "/js/jquery.validate.min.js": "/js/jquery.validate.min.js"
+    "/js/jquery.validate.min.js": "/js/jquery.validate.min.js",
+    "/js/justgage.js": "/js/justgage.js",
+    "/js/raphael-2.1.4.min.js": "/js/raphael-2.1.4.min.js"
 }

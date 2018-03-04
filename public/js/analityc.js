@@ -106,10 +106,10 @@ var myChart2 = new Chart(ctx2, {
     responsive: true,
     type: 'bar',
     data: {
-        labels: ["SDC Production", "Production Goal", "SDC Service", "Service Goal"],
+        labels: ["SDC Production", "SDC Service"],
         datasets: [{
             label: 'Data presented on Percentage (%)',
-            data: response_activity,
+            data: [response_activity[0], response_activity[2]],
             backgroundColor: ['rgba(137,167,191,0.7)', 'rgba(91,111,127,0.7)', 'rgba(182,222,255,0.7)', 'rgba(46,56,64,0.7)', 'rgba(164,200,229,0.7)'],
             borderColor: ['rgba(137,167,191,0.7)', 'rgba(91,111,127,0.7)', 'rgba(182,222,255,0.7)', 'rgba(46,56,64,0.7)', 'rgba(164,200,229,0.7)'],
             borderWidth: 1
@@ -120,20 +120,58 @@ var myChart2 = new Chart(ctx2, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: 100
                 }
             }]
+        },
+        annotation: {
+            annotations: [{
+                type: 'line',
+                id: 'hline1',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: response_activity[1],
+                borderColor: 'green',
+                borderWidth: 1,
+                label: {
+                    enabled: true,
+                    backgroundColor: 'green',
+                    fontSize: 10,
+                    position: "left",
+                    content: 'Production Goal ' + response_activity[1] + '%'
+                }
+            }, {
+                type: 'line',
+                id: 'hline2',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: response_activity[3],
+                borderColor: 'blue',
+                borderWidth: 1,
+                label: {
+                    enabled: true,
+                    backgroundColor: 'blue',
+                    fontSize: 10,
+                    position: 'right',
+                    content: 'Service Goal ' + response_activity[3] + '%'
+                }
+            }]
+
         }
     }
 });
 
 // Quality Chart
+var service_goal = 94;
+var service_on_service_goal = 93;
+var self_qa_goal = 60;
 var ctx3 = document.getElementById("quality_chart");
 var myChart3 = new Chart(ctx3, {
     responsive: true,
     type: 'bar',
     data: {
-        labels: ["Quality Producion", 'Quality Service'],
+        labels: ["Quality Producion", 'Quality Service', 'Self QA'],
         datasets: [{
             label: 'Data presented on Percentage (%)',
             data: response_quality,
@@ -143,49 +181,112 @@ var myChart3 = new Chart(ctx3, {
         }]
     },
     options: {
-        responsive: true,
+        // responsive: true,
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    min: 50,
+                    max: 100
                 }
             }]
+        },
+        annotation: {
+            annotations: [{
+                type: 'line',
+                id: 'hline3',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: service_goal,
+                borderColor: 'green',
+                borderWidth: 0,
+                label: {
+                    enabled: true,
+                    backgroundColor: 'green',
+                    fontSize: 10,
+                    position: "left",
+                    content: 'Quality Production ' + service_goal + '%'
+                }
+            }, {
+                type: 'line',
+                id: 'hline4',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: service_on_service_goal,
+                borderColor: 'blue',
+                borderWidth: 1,
+                label: {
+                    enabled: true,
+                    backgroundColor: 'blue',
+                    fontSize: 10,
+                    position: 'center',
+                    content: 'Quality on Services ' + service_on_service_goal + '%'
+                }
+            }, {
+                type: 'line',
+                id: 'hline5',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: self_qa_goal,
+                borderColor: 'red',
+                borderWidth: 1,
+                label: {
+                    enabled: true,
+                    backgroundColor: 'red',
+                    fontSize: 10,
+                    position: 'right',
+                    content: 'Self Qa Goal ' + self_qa_goal + '%'
+                }
+            }]
+
         }
     }
+
 });
 
 // CCK Chart
-var ctx4 = document.getElementById("cck_chart");
-var myChart4 = new Chart(ctx4, {
-    responsive: true,
-    type: 'bar',
-    data: {
-        labels: ["BB added", "BB call", "Elegible", "Added"],
-        datasets: [{
-            label: 'Data presented on Amount',
-            data: response_cck,
-            backgroundColor: ['rgba(137,167,191,0.7)', 'rgba(91,111,127,0.7)', 'rgba(182,222,255,0.7)', 'rgba(46,56,64,0.7)', 'rgba(164,200,229,0.7)'],
-            borderColor: ['rgba(137,167,191,0.7)', 'rgba(91,111,127,0.7)', 'rgba(182,222,255,0.7)', 'rgba(46,56,64,0.7)', 'rgba(164,200,229,0.7)'],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
+// var ctx4 = document.getElementById("cck_chart");
+// var myChart4 = new Chart(ctx4, {
+//     responsive: true,
+//     type: 'bar',
+//     data: {
+//         labels: ["BB added", "BB call", "Elegible", "Added"],
+//         datasets: [{
+//             label: 'Data presented on Amount',
+//             data: response_cck,
+//             backgroundColor: [
+//                 'rgba(137,167,191,0.7)',
+//                 'rgba(91,111,127,0.7)',
+//                 'rgba(182,222,255,0.7)',
+//                 'rgba(46,56,64,0.7)',
+//                 'rgba(164,200,229,0.7)'
+//             ],
+//             borderColor: [
+//                 'rgba(137,167,191,0.7)',
+//                 'rgba(91,111,127,0.7)',
+//                 'rgba(182,222,255,0.7)',
+//                 'rgba(46,56,64,0.7)',
+//                 'rgba(164,200,229,0.7)'
+//             ],
+//             borderWidth: 1
+//         }]
+//     },
+//     options: {
+//         responsive: true,
+//         scales: {
+//             yAxes: [{
+//                 ticks: {
+//                     beginAtZero: true,
+//                 }
+//             }]
+//         }
+//     }
+// });
 var ctx5 = document.getElementById("cck_chart_goal");
 var myChart5 = new Chart(ctx5, {
     responsive: true,
     type: 'bar',
     data: {
-        labels: ["CCK %", "CCK Goal"],
+        labels: ["CCK TR", "CALL BACK"],
         datasets: [{
             label: 'Data presented on percentage %',
             data: response_cck_goal,
@@ -199,9 +300,90 @@ var myChart5 = new Chart(ctx5, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: 100
                 }
             }]
+        },
+        annotation: {
+            annotations: [{
+                type: 'line',
+                id: 'hline3',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: response_cck_goal[2],
+                borderColor: 'red',
+                borderWidth: 0,
+                label: {
+                    enabled: true,
+                    backgroundColor: 'red',
+                    fontSize: 10,
+                    position: "left",
+                    content: 'CCk Goal ' + Math.round(response_cck_goal[2]) + '%'
+                }
+            }, {
+                type: 'line',
+                id: 'hline4',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: 90,
+                borderColor: 'blue',
+                borderWidth: 1,
+                label: {
+                    enabled: true,
+                    backgroundColor: 'blue',
+                    fontSize: 10,
+                    position: 'right',
+                    content: 'Call Back Goal ' + 90 + '%'
+                }
+            }]
+
+        }
+    }
+});
+//Graph Protection Plan
+var ctx7 = document.getElementById("pp");
+var myChart7 = new Chart(ctx7, {
+    responsive: true,
+    type: 'bar',
+    data: {
+        labels: ["DPP Added"],
+        datasets: [{
+            label: 'Data presented on percentage %',
+            data: response_dpp,
+            backgroundColor: ['rgba(137,167,191,0.7)', 'rgba(91,111,127,0.7)', 'rgba(182,222,255,0.7)', 'rgba(46,56,64,0.7)', 'rgba(164,200,229,0.7)'],
+            borderColor: ['rgba(137,167,191,0.7)', 'rgba(91,111,127,0.7)', 'rgba(182,222,255,0.7)', 'rgba(46,56,64,0.7)', 'rgba(164,200,229,0.7)'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 100
+                }
+            }]
+        },
+        annotation: {
+            annotations: [{
+                type: 'line',
+                id: 'hline6',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: 54,
+                borderColor: 'green',
+                borderWidth: 0,
+                label: {
+                    enabled: true,
+                    backgroundColor: 'green',
+                    fontSize: 10,
+                    position: "left",
+                    content: 'DDP Goal ' + 54 + '%'
+                }
+            }]
+
         }
     }
 });
@@ -211,7 +393,7 @@ var myChart6 = new Chart(ctx6, {
     responsive: true,
     type: 'bar',
     data: {
-        labels: ["PP %", "QC %", "i90 %"],
+        labels: ["i90 %"],
         datasets: [{
             label: 'Data presented on percentage %',
             data: response_minor,
