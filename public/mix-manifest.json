@@ -33,5 +33,12 @@
     "/js/classie.js": "/js/classie.js",
     "/js/jquery.validate.min.js": "/js/jquery.validate.min.js",
     "/js/justgage.js": "/js/justgage.js",
-    "/js/raphael-2.1.4.min.js": "/js/raphael-2.1.4.min.js"
+    "/js/raphael-2.1.4.min.js": "/js/raphael-2.1.4.min.js",
+    "/css/jquery.dataTables.css": "/css/jquery.dataTables.css",
+    "/css/dataTables.fixedColumns.min.css": "/css/dataTables.fixedColumns.min.css",
+    "/css/datatables.responsive.css": "/css/datatables.responsive.css",
+    "/js/jquery.dataTables.min.js": "/js/jquery.dataTables.min.js",
+    "/js/dataTables.tableTools.min.js": "/js/dataTables.tableTools.min.js",
+    "/js/datatables.responsive.js": "/js/datatables.responsive.js",
+    "/js/lodash.min.js": "/js/lodash.min.js"
 }

@@ -106,7 +106,7 @@
                         </div>
                         <!-- City, Zipcode and State -->
                         <div class="row">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
                                     <label for="">City</label>
                                     <input type="text" class="form-control" name="city" value="{{old('city')}}" placeholder="City">
@@ -117,7 +117,7 @@
                                 </span>
                                 @endif
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-md-3 col-lg-4">
+                            <div class="col-sm-4 col-md-3 col-lg-4">
                                 <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
                                     <label for="">State</label>
                                     <select name="state" class="form-control">
@@ -131,7 +131,7 @@
                                 </span>
                                 @endif
                             </div>
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group{{ $errors->has('zip') ? ' has-error' : '' }}">
                                     <label for="">Zip Code</label>
                                     <input type="number" class="form-control" name="zip" value="{{old('zipcode')}}" placeholder="Ex:10001">

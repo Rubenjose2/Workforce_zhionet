@@ -165,7 +165,7 @@
                       <div class="dropdown pull-right hidden-md-down">
                     <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="thumbnail-wrapper d32 circular inline">
-                     <img src="/uploads/avatars/{{Auth::user()->picture}}" alt="" data-src="/uploads/avatars/{{Auth::user()->picture}}" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
+                    <img src="{{public_path('/uploads/avatars/')}}{{Auth::user()->picture}}" alt="" data-src="/uploads/avatars/{{Auth::user()->picture}}" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
                     </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
@@ -239,6 +239,16 @@
     <script src="{{asset('js/pages.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/style.js')}}"></script>
     {{--  <script src="{{ asset('js/app.js') }}"></script>  --}}
+
+    {{--  Datatable  --}}
+    <script src="{{asset('js/user_admin.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/dataTables.tableTools.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-datatable-bootstrap.js')}}"></script>
+    <script src="{{asset('js/datatables.responsive.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/lodash.min.js')}}" type="text/javascript"></script>
+
+
 
 </body>
 

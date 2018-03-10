@@ -51,3 +51,16 @@ mix.copy('resources/assets/plugins/jquery-validation/js/jquery.validate.min.js',
 mix.copy('resources/assets/js/justgage.js', 'public/js');
 mix.copy('resources/assets/js/raphael-2.1.4.min.js', 'public/js');
 mix.js('resources/assets/js/gauge.js', 'public/js');
+
+//Datatable setup and Css
+
+mix.copy('resources/assets/plugins/jquery-datatable/media/css/jquery.dataTables.css', 'public/css');
+mix.copy('resources/assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css', 'public/css');
+mix.copy('resources/assets/plugins/datatables-responsive/css/datatables.responsive.css', 'public/css');
+
+
+
+mix.copy('resources/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js', 'public/js');
+mix.copy('resources/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js', 'public/js');
+mix.copy('resources/assets/plugins/datatables-responsive/js/datatables.responsive.js', 'public/js');
+mix.copy('resources/assets/plugins/datatables-responsive/js/lodash.min.js', 'public/js');
