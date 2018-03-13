@@ -2,14 +2,18 @@
 $(document).ready(function() {
     var table = $('#table_user');
     table.DataTable({
-        "sDom": "<'table-responsive'ft><'row'<p i>>",
+        "sDom": "<'table-responsive'flt><'row'<p i>>",
+        "sPaginationType": "bootstrap",
         "destroy": true,
         "scrollCollapse": true,
         "oLanguage": {
-            "sLengthMenu": "_MENU_ ",
+            // "sLengthMenu": "_MENU_ ",
             "sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
         },
-        "iDisplayLength": 5
+        "iDisplayLength": 5,
+        "order": [
+            [0, "desc"]
+        ],
     });
 
 

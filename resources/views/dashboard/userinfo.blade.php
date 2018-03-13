@@ -139,7 +139,7 @@
             <br>
             <div>
                 <button type="submit" class="btn btn-default">Submit</button>
-                <a href="/" type="cancel" class="btn btn-warning">Cancel</a>
+            <a href="{{URL::previous() }}" type="cancel" class="btn btn-warning">Cancel</a>
             </div>
 
     </div>

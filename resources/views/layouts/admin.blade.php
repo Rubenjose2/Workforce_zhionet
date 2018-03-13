@@ -84,7 +84,7 @@
                         <ul class="sub-menu">
                             <li class="">
                                 <a href="{{route('user.list')}}">Lists of Users</a>
-                                <span class="icon-thumbnail">sp</span>
+                                <span class="icon-thumbnail">lu</span>
                             </li>
                         </ul>
                     </li>
@@ -97,11 +97,11 @@
                             <ul class="sub-menu">
                                 <li class="">
                                     <a href="{{route('postform.show')}}">Create a message</a>
-                                    <span class="icon-thumbnail">sp</span>
+                                    <span class="icon-thumbnail">cm</span>
                                 </li>
                                 <li class="">
                                         <a href="{{route('posts.index')}}">List of messages</a>
-                                        <span class="icon-thumbnail">sp</span>
+                                        <span class="icon-thumbnail">lm</span>
                                     </li>
                             </ul>
                         </li>
@@ -165,7 +165,7 @@
                       <div class="dropdown pull-right hidden-md-down">
                     <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="thumbnail-wrapper d32 circular inline">
-                    <img src="{{public_path('/uploads/avatars/')}}{{Auth::user()->picture}}" alt="" data-src="/uploads/avatars/{{Auth::user()->picture}}" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
+                    <img src="/uploads/avatars/{{Auth::user()->picture}}" alt="" data-src="/uploads/avatars/{{Auth::user()->picture}}" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
                     </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
@@ -223,6 +223,7 @@
 
     <script src="{{asset('js/pace.min.js')}}"></script>
     {{--  <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>  --}}
+    <script src="{{asset('js/classie.js')}}"></script>
     <script src="{{asset('js/modernizr.custom.js')}}"></script>
     <script src="{{asset('js/jquery-ui.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/tether.min.js')}}" type="text/javascript"></script>
@@ -235,10 +236,6 @@
     <script src="{{asset('js/jquery.actual.min.js')}}"></script>
     <script src="{{asset('js/jquery.scrollbar.min.js')}}"></script>
     <!-- END VENDOR JS -->
-    <!-- BEGIN CORE TEMPLATE JS -->
-    <script src="{{asset('js/pages.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/style.js')}}"></script>
-    {{--  <script src="{{ asset('js/app.js') }}"></script>  --}}
 
     {{--  Datatable  --}}
     <script src="{{asset('js/user_admin.js')}}"></script>
@@ -248,6 +245,9 @@
     <script src="{{asset('js/datatables.responsive.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/lodash.min.js')}}" type="text/javascript"></script>
 
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="{{asset('js/pages.js')}}" type="text/javascript"></script>
+     <script src="{{asset('js/style.js')}}"></script>
 
 
 </body>

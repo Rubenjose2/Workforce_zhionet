@@ -45,6 +45,7 @@ mix.copy('resources/assets/plugins/switchery/css/switchery.min.css', 'public/css
 mix.copy('resources/assets/plugins/select2/js/select2.full.min.js', 'public/js');
 mix.copy('resources/assets/plugins/classie/classie.js', 'public/js');
 mix.copy('resources/assets/plugins/jquery-validation/js/jquery.validate.min.js', 'public/js');
+mix.copy('resources/assets/plugins/classie/classie.js', 'pubic/js');
 
 //From Custom Gage
 
@@ -62,5 +63,12 @@ mix.copy('resources/assets/plugins/datatables-responsive/css/datatables.responsi
 
 mix.copy('resources/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js', 'public/js');
 mix.copy('resources/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js', 'public/js');
+mix.copy('resources/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js', 'public/js');
 mix.copy('resources/assets/plugins/datatables-responsive/js/datatables.responsive.js', 'public/js');
 mix.copy('resources/assets/plugins/datatables-responsive/js/lodash.min.js', 'public/js');
+
+//Typehead
+
+mix.copy('resources/assets/plugins/bootstrap-typehead/typeahead.bundle.min.js', 'public/js');
+mix.copy('resources/assets/plugins/bootstrap-typehead/typeahead.jquery.min.js', 'public/js');
+mix.copy('resources/assets/js/typeahead_states.js', 'public/js');

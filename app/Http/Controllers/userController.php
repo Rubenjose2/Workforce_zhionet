@@ -117,7 +117,6 @@ class userController extends Controller
 
     public function userlist(){
         $users = User::all();
-
         return view('administrator.user_list')->withUsers($users); 
     }
 

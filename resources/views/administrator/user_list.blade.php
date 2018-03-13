@@ -8,7 +8,8 @@
     <table id="table_user" class="table table-hover" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>#</th>
+                
+                <th>Score</th>
                 <th></th>
                 <th>Tech Id</th>
                 <th>Firts Name</th>
@@ -20,13 +21,18 @@
         <tbody>
             @foreach($users as $user)
             <tr data-send="{{$user->id}}" class="pointer">
-                <th>{{$user->id}}</th>
-                <th><img src="/uploads/avatars/{{$user->picture}}" class="avatar-bullet" /></th>
-                <th>{{$user->tech_id}}</th>
-                <th>{{$user->fname}}</th>
-                <th>{{$user->lname}}</th>
-                <th>{{$user->email}}</th>
-                <th>{{$user->phone}}</th>
+                
+                @if($user->score['total_score']>=50)
+                <td><span class="label label-info">{{$user->score['total_score']}}</span></td>
+                @else
+                <td><span class="label label-danger">{{$user->score['total_score']}}</span></td>
+                @endif
+                <td><img src="/uploads/avatars/{{$user->picture}}" class="avatar-bullet" /></td>
+                <td>{{$user->tech_id}}</td>
+                <td>{{$user->fname}}</td>
+                <td>{{$user->lname}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->phone}}</td>
             </tr>
             @endforeach
         </tbody>

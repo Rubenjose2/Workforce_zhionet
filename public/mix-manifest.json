@@ -32,6 +32,7 @@
     "/js/select2.full.min.js": "/js/select2.full.min.js",
     "/js/classie.js": "/js/classie.js",
     "/js/jquery.validate.min.js": "/js/jquery.validate.min.js",
+    "/pubic/js/classie.js": "/pubic/js/classie.js",
     "/js/justgage.js": "/js/justgage.js",
     "/js/raphael-2.1.4.min.js": "/js/raphael-2.1.4.min.js",
     "/css/jquery.dataTables.css": "/css/jquery.dataTables.css",
@@ -39,6 +40,10 @@
     "/css/datatables.responsive.css": "/css/datatables.responsive.css",
     "/js/jquery.dataTables.min.js": "/js/jquery.dataTables.min.js",
     "/js/dataTables.tableTools.min.js": "/js/dataTables.tableTools.min.js",
+    "/js/jquery-datatable-bootstrap.js": "/js/jquery-datatable-bootstrap.js",
     "/js/datatables.responsive.js": "/js/datatables.responsive.js",
-    "/js/lodash.min.js": "/js/lodash.min.js"
+    "/js/lodash.min.js": "/js/lodash.min.js",
+    "/js/typeahead.bundle.min.js": "/js/typeahead.bundle.min.js",
+    "/js/typeahead.jquery.min.js": "/js/typeahead.jquery.min.js",
+    "/js/typeahead_states.js": "/js/typeahead_states.js"
 }

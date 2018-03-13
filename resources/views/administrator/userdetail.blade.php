@@ -60,7 +60,7 @@
                             <br>
                         </div>
                         <div class="col-md-4">
-                            <strong>Date Of Birth</strong>: {{$user->DOB}}
+                            <strong>Date Of Birth</strong>: {{date('m-d-Y',strtotime($user->DOB))}}
                         </div>
                         <div class="col-md-7 col-md-offset-1">
 
