@@ -27,6 +27,10 @@ Route::post('register','userAuthController@register');
 Route::get('user_edit','userController@show')->name('user-edit');
 Route::post('user_edit','userController@update');
 Route::get('post_list','showMessangerForm@postlist')->name('user_post_list');
+//This would show the message inside the Modal. Javascript API
+Route::get('admin/postshow','showMessangerForm@showPost');
+Route::get('updatepost','showMessangerForm@userUpdatePost');
+Route::get('forceModalOpen','showMessangerForm@forceModalOpen');
 
 
 Route::group(['middleware' => ['auth','roles']], function () {
@@ -41,8 +45,6 @@ Route::group(['middleware' => ['auth','roles']], function () {
 
         Route::resource('admin/posts', 'adminControllerMessages');
         Route::get('admin/post_form','showMessangerForm@show')->name('postform.show');
-        Route::get('admin/postshow','showMessangerForm@showPost');
-        Route::get('updatepost','showMessangerForm@userUpdatePost');
         Route::post('admin/post_delete/{id}','adminControllerMessages@destroy');
 
         //User Admins site managements

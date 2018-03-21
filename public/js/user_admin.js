@@ -22,4 +22,10 @@ $(document).ready(function() {
         var user_id = $(this).attr("data-send");
         window.location = "/admin/user/view/" + user_id;
     });
+
+    //Redirect the user to the Show more info section
+    $('#new_users tbody').on('click', 'tr', function() {
+        var user_id = $(this).attr("data-send");
+        window.location = "/admin/user/view/" + user_id;
+    });
 });

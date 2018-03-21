@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/bootstrap.js": "/js/bootstrap.js",
     "/js/style.js": "/js/style.js",
+    "/js/modals_alert.js": "/js/modals_alert.js",
     "/js/gauge.js": "/js/gauge.js",
     "/js/chart.js": "/js/chart.js",
     "/js/bootstrap.min.js": "/js/bootstrap.min.js",

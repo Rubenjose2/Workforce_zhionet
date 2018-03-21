@@ -60,42 +60,33 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 231);
+/******/ 	return __webpack_require__(__webpack_require__.s = 229);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 231:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(232);
+module.exports = __webpack_require__(230);
 
 
 /***/ }),
 
-/***/ 232:
+/***/ 230:
 /***/ (function(module, exports) {
 
 $(function () {
-    var jg2 = new JustGage({
-        id: "jg2",
-        percents: true,
-        value: 30,
-        min: 0,
-        max: 100,
-        title: "Score",
-        customSectors: {
-            ranges: [{
-                color: "#ff0000",
-                lo: 0,
-                hi: 30
-            }, {
-                color: "#20c949",
-                lo: 51,
-                hi: 100
-            }]
-        },
-        counter: true
+    $.ajax({
+        method: 'GET',
+        url: 'forceModalOpen'
+    }).done(function ($data) {
+        if (Object.keys($data).length > 0) {
+            $("#button_accept").attr("data-send", $data.id);
+            $('#myModalLabel').empty().append($data.subject);
+            $('.modal-body').empty().append($data.body);
+            $('#myModal').modal({ backdrop: "static" });
+        };
     });
 });
 

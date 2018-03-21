@@ -74,17 +74,20 @@
                         <span class="title">Dashboard</span>
                     </a>
                     <span class="icon-thumbnail "><i class="fa fa-dashboard"></i></span>
+                    
                 </li>
                 <li class="">
                         <a href="javascript:;">
                             <span class="title">Users</span>
                             <span class=" arrow"></span>
+                            
                         </a>
                         <span class="icon-thumbnail"><i class="fa fa-user fa-lg"></i></span>
                         <ul class="sub-menu">
                             <li class="">
                                 <a href="{{route('user.list')}}">Lists of Users</a>
                                 <span class="icon-thumbnail">lu</span>
+                                
                             </li>
                         </ul>
                     </li>

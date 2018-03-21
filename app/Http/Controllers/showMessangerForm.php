@@ -47,6 +47,14 @@ class showMessangerForm extends Controller
         return $request; 
     }
 
+    public function forceModalOpen(){
+        $user = Auth::user();
+        $userId = $user->id;
+        $data= User::find($userId)->post()->wherePivot('status',0)->orderBy('id','desc')->first();
+        
+        return response()->json($data);
+        }
+
 
 
     //SANDBOX ONLY TEST ROUTE//

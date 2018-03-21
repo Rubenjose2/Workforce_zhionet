@@ -107,6 +107,7 @@
 
 </div>
 <script>var data = {!!$response!!}</script>
+<script src="{{asset('js/modals_alert.js')}}"></script>
 <script src="{{asset('js/chart.js')}}"></script>
 
 @endsection

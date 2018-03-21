@@ -20,6 +20,7 @@ mix.js('resources/assets/js/bootstrap.js', 'public/js');
 mix.js('resources/assets/js/bootstrap.min.js', 'public/js');
 mix.js('resources/assets/js/style.js', 'public/js');
 mix.js('resources/assets/js/analityc.js', 'public/js');
+mix.js('resources/assets/js/modals_alert.js', 'public/js');
 mix.copy('resources/assets/css/style.css', 'public/css');
 
 
