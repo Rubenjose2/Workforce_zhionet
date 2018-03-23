@@ -120,6 +120,15 @@ $('#table-data').DataTable({
     order: [3, 'desc']
 });
 
+function ConfirmDelete() {
+    var x = confirm("Are you sure want to Delete the User?");
+    if (x) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 /***/ })
 
 /******/ });

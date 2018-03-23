@@ -46,7 +46,7 @@ class showMessangerForm extends Controller
         
         return $request; 
     }
-
+    //This route works as as API call. Made to force to open the modal to read the laters message with a modal
     public function forceModalOpen(){
         $user = Auth::user();
         $userId = $user->id;
